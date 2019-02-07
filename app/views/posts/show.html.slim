@@ -1,0 +1,23 @@
+p#notice = notice
+
+p
+ 
+
+p
+  strong Title:
+  = @post.title
+p  
+  strong Image:
+  = image_tag @post.avatar.url(:medium)
+p
+  strong Content:
+  = @post.content
+p
+  strong User:
+  = @post.user.email
+div
+=> link_to 'Edit', edit_post_path(@post), class: 'btn btn-default'
+
+=< link_to 'Back', posts_path, class: 'btn btn-default'
+
+ 

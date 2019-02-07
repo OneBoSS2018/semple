@@ -1,0 +1,22 @@
+h1 Listing posts
+
+
+
+- @posts.each do |post| 
+  h1 = post.title
+  p = image_tag post.avatar(:medium)
+  p = post.content
+  div 
+       b Author:
+       = post.user.email
+
+  
+  
+
+
+  p = link_to 'Show', post, class: 'btn btn-default'  
+  p = link_to 'Edit', edit_post_path(post), class: 'btn btn-default'
+  p = link_to 'Delete', post, class: 'btn btn-default', data: {:confirm => 'Really?'}, :method => :delete
+
+   
+
