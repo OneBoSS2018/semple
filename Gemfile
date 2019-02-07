@@ -7,8 +7,6 @@ ruby '2.5.3'
 gem 'rails', '~> 5.2.2'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -37,7 +35,12 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 
-
+group :development, :test do # <<<< :development, not devlopment
+  gem 'sqlite3'
+end
+group :production do
+  gem 'pg'
+end
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -72,5 +75,4 @@ gem 'bootstrap-sass'
 gem 'devise'
 gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
 gem 'aws-sdk', '~> 2'
-gem 'pg'
 gem 'activeadmin'
